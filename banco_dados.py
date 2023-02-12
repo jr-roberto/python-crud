@@ -9,6 +9,7 @@ class banco:
         return banco.cur.execute(SQL)
     
     def consulta_tabelas():
+
         SQL = "SELECT name FROM sqlite_master"
 
         # Retorna tupla com todas as tabelas
@@ -32,8 +33,22 @@ class banco:
         
         return tables
 
-tables = banco.consulta_tabelas()
+    def novo_usuario( values:list ):
+        nome_usuario = values[0]
+        senha = values[1]
+        tipo_usuario = values[2]
 
-for tab in tables:
-    print(tab)
-    
+        SQL = f"INSERT INTO tbl_usuarios (nome_usuario,senha,tipo_usuario) VALUES ('{nome_usuario}','{senha}','{tipo_usuario}')"
+        banco.cur.execute(SQL)
+        banco.conn.commit()
+        return 
+
+if len( banco.consulta_tabelas() ) == 0:
+    # COnfigurando tabela usuario
+    columns = ['nome_usuario','senha','tipo_usuario']
+    banco.nova_tabela('usuarios',columns=columns)
+    banco.novo_usuario( values=['roberto','banco123!','admin'] )
+    # {'table_name': 'tbl_usuarios', 'columns': ['id', 'nome_usuario', 'senha', 'tipo_usuario']}
+
+tabelas = banco.consulta_tabelas()
+print(tabelas)
