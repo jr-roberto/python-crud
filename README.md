@@ -1,6 +1,20 @@
-# python-crud
-Um projeto simples meu primeiros CRUD
+# Execute os cammandos abaixo na pasta raiz do projeto
 
-# Teste
+# Inciando maquina virtual
 
-Alou
+```
+python -m venv env
+env\scripts\activate
+```
+
+# Instalando dependencias
+
+```
+pip install -r requirements.txt 
+```
+
+# Iniciando o app
+
+```
+python main.py
+```
