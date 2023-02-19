@@ -1,3 +1,9 @@
+# Sobre o projeto
+> Status: Em desenvolvimento
+
+Sistema de gerenciamento de funcionarios e equipes de trabalho
+
+
 # Execute os cammandos abaixo na pasta raiz do projeto
 
 # Inciando maquina virtual

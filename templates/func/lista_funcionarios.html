@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+
+<h2>Lista de Funcionraios</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nome Funcionario</th>
+            <th>Cargo</th>
+            <th>Departamento</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for func in base_funcionarios %}
+        <tr>
+            <td>{{ func.nome }}</td>
+            <td>{{ func.cargo }}</td>
+            <td>{{ func.departamento }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
